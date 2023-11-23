@@ -17,8 +17,8 @@
 .pipe {
   position: absolute;
   bottom: 0;
-  width: 80px;
-  animation: pipe-animation 2s infinite linear;
+  width: 90px;
+  animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
@@ -37,21 +37,41 @@
   animation: clouds-animation 10s infinite linear;
 }
 
-.jump-button {
+/* Adiciona estilos à div que envolve o botão */
+.jump-button-container {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
-  padding: 10px;
-  font-size: 16px;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Adiciona o estilo para o botão de pulo */
+.jump-button {
+  padding: 15px 20px; /* Aumenta o tamanho do botão */
+  font-size: 18px;
   background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao botão */
+  transition: background-color 0.3s ease; /* Adiciona transição de cor ao botão */
 }
 
+/* Adiciona um estilo para o botão quando hover (opcional) */
 .jump-button:hover {
   background-color: #45a049;
+}
+
+@media screen and (max-width: 600px) {
+  .jump-button-container {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .jump-button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
 }
 
 @keyframes pipe-animation {
