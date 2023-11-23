@@ -33,4 +33,4 @@ const loop = setInterval(() => {
 }, 10);
 
 // document.addEventListener("keydown", jump);
-document.getElementById("jumpButton").addEventListener("click", jump);
+// // document.getElementById("jumpButton").addEventListener("click", jump);
