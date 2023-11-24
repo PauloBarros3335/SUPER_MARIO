@@ -7,6 +7,8 @@
 .game-board {
   width: 100%;
   height: 500px;
+  margin: 0 auto;
+  border: 1x solid#333;
   border-bottom: 15px solid rgb(35, 160, 35);
   margin: 0 auto;
   position: relative;
@@ -18,7 +20,7 @@
   position: absolute;
   bottom: 0;
   width: 90px;
-  animation: pipe-animation 2s infinite linear;
+  animation: pipe-animation 1.5s infinite linear;
 }
 
 .mario {
@@ -33,14 +35,14 @@
 
 .clouds {
   position: absolute;
-  width: 100%; /* Alterado para ocupar 100% da largura da tela */
+  width: 70%; /* Alterado para ocupar 100% da largura da tela */
   animation: clouds-animation 10s infinite linear;
 }
 
 .jump-button-container {
   position: fixed;
-  bottom: 5%; /* Alterado para ajustar percentualmente conforme a tela */
-  right: 5%; /* Alterado para ajustar percentualmente conforme a tela */
+  bottom: 5%;
+  right: 5%;
 }
 
 .jump-button {
@@ -59,51 +61,10 @@
   background-color: #45a049;
 }
 
-@media screen and (max-width: 600px) {
-  .jump-button-container {
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .jump-button {
-    padding: 10px 15px;
-    font-size: 16px;
-  }
-
-  .pipe {
-    position: absolute;
-    bottom: 0;
-    width: 40px;
-    animation: pipe-animation 1.5s infinite linear;
-  }
-
-  @keyframes jump {
-    0% {
-      bottom: 0;
-    }
-
-    40% {
-      bottom: 90px;
-    }
-
-    50% {
-      bottom: 70px;
-    }
-
-    60% {
-      bottom: 90px;
-    }
-
-    100% {
-      bottom: 0;
-    }
-  }
-}
-
 .jump-counter {
   position: fixed;
-  bottom: 5%; /* Alterado para ajustar percentualmente conforme a tela */
-  left: 5%; /* Alterado para ajustar percentualmente conforme a tela */
+  bottom: 5%;
+  left: 5%;
   font-size: 24px;
   color: #333;
   background-color: #4caf50;
@@ -146,10 +107,120 @@
 
 @keyframes clouds-animation {
   from {
-    right: -100%; /* Alterado para iniciar fora da tela */
+    right: -100%;
   }
 
   to {
     right: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .game-board {
+    width: 100%;
+    height: 300px;
+    border-bottom: 10px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+  }
+
+  .pipe {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    animation: pipe-animation 1s infinite linear;
+  }
+
+  .mario {
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .jump {
+    animation: jump 700ms ease-out; /* Aumentado o tempo de pulo */
+  }
+
+  .clouds {
+    position: absolute;
+    width: 100%;
+    animation: clouds-animation 10s infinite linear;
+  }
+
+  .jump-button-container {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .jump-button {
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .jump-button:hover {
+    background-color: #45a049;
+  }
+
+  .jump-counter {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    font-size: 24px;
+    color: #333;
+    background-color: #4caf50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes pipe-animation {
+    from {
+      right: -80px;
+    }
+
+    to {
+      right: 100%;
+    }
+  }
+
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+
+    20% {
+      bottom: 100px; /* Ajustado para dar mais espaço */
+    }
+
+    40% {
+      bottom: 100px; /* Ajustado para dar mais espaço */
+    }
+
+    60% {
+      bottom: 100px;
+    }
+
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @keyframes clouds-animation {
+    from {
+      right: -100%;
+    }
+
+    to {
+      right: 100%;
+    }
   }
 }
