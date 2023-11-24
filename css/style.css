@@ -18,7 +18,7 @@
   position: absolute;
   bottom: 0;
   width: 90px;
-  animation: pipe-animation 1.5s infinite linear;
+  animation: pipe-animation 2s infinite linear;
 }
 
 .mario {
@@ -37,27 +37,25 @@
   animation: clouds-animation 10s infinite linear;
 }
 
-/* Adiciona estilos à div que envolve o botão */
 .jump-button-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
 
-/* Adiciona o estilo para o botão de pulo */
 .jump-button {
-  padding: 15px 20px; /* Aumenta o tamanho do botão */
+  padding: 15px 20px;
+
   font-size: 18px;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao botão */
-  transition: background-color 0.3s ease; /* Adiciona transição de cor ao botão */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
-/* Adiciona um estilo para o botão quando hover (opcional) */
 .jump-button:hover {
   background-color: #45a049;
 }
@@ -74,7 +72,6 @@
   }
 }
 
-/* Adiciona keyframes ajustados para dispositivos menores */
 @keyframes jump {
   0% {
     bottom: 0;
@@ -95,6 +92,15 @@
   100% {
     bottom: 0;
   }
+}
+
+/* Adiciona estilos ao contador de pulos */
+.jump-counter {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  font-size: 18px;
+  color: #333;
 }
 
 @keyframes pipe-animation {

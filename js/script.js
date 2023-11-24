@@ -1,12 +1,30 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
+const jumpButton = document.getElementById("jumpButton");
+const jumpCounter = document.getElementById("jumpCounter");
+
+// const jump = () => {
+//   mario.classList.add("jump");
+
+//   setTimeout(() => {
+//     mario.classList.remove("jump");
+//   }, 400);
+// };
+
+let jumps = 0;
 
 const jump = () => {
   mario.classList.add("jump");
+  jumps++;
+  updateJumpCounter();
 
   setTimeout(() => {
     mario.classList.remove("jump");
   }, 400);
+};
+
+const updateJumpCounter = () => {
+  jumpCounter.textContent = `Jumps: ${jumps}`;
 };
 
 const loop = setInterval(() => {
@@ -32,5 +50,5 @@ const loop = setInterval(() => {
   }
 }, 10);
 
-// document.addEventListener("keydown", jump);
+document.addEventListener("keydown", jump);
 // // document.getElementById("jumpButton").addEventListener("click", jump);
