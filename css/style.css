@@ -20,7 +20,7 @@
   position: absolute;
   bottom: 0;
   width: 90px;
-  animation: pipe-animation 1.5s infinite linear;
+  animation: pipe-animation 2s infinite linear;
 }
 
 .mario {
@@ -30,12 +30,12 @@
 }
 
 .jump {
-  animation: jump 500ms ease-out;
+  animation: jump 700ms ease-out;
 }
 
 .clouds {
   position: absolute;
-  width: 70%; /* Alterado para ocupar 100% da largura da tela */
+  width: 70%;
   animation: clouds-animation 10s infinite linear;
 }
 
@@ -89,15 +89,15 @@
   }
 
   40% {
-    bottom: 190px;
+    bottom: 120px;
   }
 
   50% {
-    bottom: 190px;
+    bottom: 120px;
   }
 
   60% {
-    bottom: 190px;
+    bottom: 120px;
   }
 
   100% {
@@ -115,7 +115,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .game-board {
     width: 100%;
     height: 300px;
@@ -129,8 +129,8 @@
   .pipe {
     position: absolute;
     bottom: 0;
-    width: 40px;
-    animation: pipe-animation 1s infinite linear;
+    width: 50px;
+    animation: pipe-animation 1.5s infinite linear;
   }
 
   .mario {
@@ -140,7 +140,7 @@
   }
 
   .jump {
-    animation: jump 700ms ease-out; /* Aumentado o tempo de pulo */
+    animation: jump 500ms ease-out;
   }
 
   .clouds {
@@ -172,7 +172,8 @@
 
   .jump-counter {
     position: fixed;
-    bottom: 5%;
+    height: 43px;
+    top: 10px;
     left: 5%;
     font-size: 24px;
     color: #333;
@@ -197,22 +198,56 @@
       bottom: 0;
     }
 
-    20% {
-      bottom: 100px; /* Ajustado para dar mais espaço */
+    40% {
+      bottom: 170px;
     }
 
-    40% {
-      bottom: 100px; /* Ajustado para dar mais espaço */
+    50% {
+      bottom: 170px;
     }
 
     60% {
-      bottom: 100px;
+      bottom: 170px;
     }
 
     100% {
       bottom: 0;
     }
   }
+
+  /* @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+
+    10% {
+      bottom: 20px;
+    }
+    20% {
+      bottom: 30px;
+    }
+
+    30% {
+      bottom: 40px;
+    }
+    40% {
+      bottom: 50px;
+    }
+
+    50% {
+      bottom: 100px;
+    }
+    70% {
+      bottom: 70px;
+    }
+    90% {
+      bottom: 50px;
+    }
+
+    100% {
+      bottom: 0;
+    }
+  } */
 
   @keyframes clouds-animation {
     from {
